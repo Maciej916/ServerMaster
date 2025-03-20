@@ -1,0 +1,15 @@
+{
+  "homepage": "https:/curseforge.com/minecraft/mc-mods/overenchanted",
+  "changelog": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files",
+  "1.21.4": {
+    "0.0.5": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files/6319755",
+    "0.0.4": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files/6313800",
+    "0.0.3": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files/6307689",
+    "0.0.2": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files/6301542",
+    "0.0.1": "https:/curseforge.com/minecraft/mc-mods/overenchanted/files/6296695"
+  },
+  "promos": {
+    "1.21.4-latest": "1.21.4-0.0.5",
+    "1.21.4-recommended": "1.21.4-0.0.5"
+  }
+}

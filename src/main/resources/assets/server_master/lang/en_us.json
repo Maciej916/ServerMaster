@@ -1,0 +1,8 @@
+{
+  "command.server_master.author": "Author: %s Github: %s",
+  "command.server_master.configuration_reloaded": "Configuration reloaded successfully!",
+  "command.server_master.configuration_reload_failed": "Failed to reload configuration files check console for more information.",
+  "command.server_master.unknown_action": "Unknown action: %s",
+  "command.server_master.rules_disabled": "Rules are disabled on this server.",
+  "command.server_master.rules_disabled_single_player": "There are no rules in Single Player — it’s your world, we’re just villagers in it."
+}
