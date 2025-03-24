@@ -2,10 +2,11 @@
   "homepage": "https:/curseforge.com/minecraft/mc-mods/server-master",
   "changelog": "https:/curseforge.com/minecraft/mc-mods/server-master/files",
   "1.21.1": {
+    "0.0.2": "https:/curseforge.com/minecraft/mc-mods/server-master/files/6340151",
     "0.0.1": "https:/curseforge.com/minecraft/mc-mods/server-master/files/6326456"
   },
   "promos": {
-    "1.21.1-latest": "1.21.1-0.0.1",
-    "1.21.1-recommended": "1.21.1-0.0.1"
+    "1.21.1-latest": "1.21.1-0.0.2",
+    "1.21.1-recommended": "1.21.1-0.0.2"
   }
 }

@@ -12,6 +12,7 @@ import java.util.List;
 
 public class MotdConfig implements JsonSerializable {
     private boolean enabled = true;
+    private boolean runInSinglePlayer = false;
     private List<String> messages = List.of(
             "&uWelcome &w%player% &uto our server, while you're here please &l&ubehave&r&u and &l&ufollow &r&uthe rules&r&u!",
             "&uYou can check our rules by typing %rules%",
@@ -22,6 +23,10 @@ public class MotdConfig implements JsonSerializable {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public boolean isRunInSinglePlayer() {
+        return runInSinglePlayer;
     }
 
     public List<MutableComponent> getMessages() {
@@ -38,6 +43,7 @@ public class MotdConfig implements JsonSerializable {
         JsonObject object = new JsonObject();
 
         object.addProperty("enabled", enabled);
+        object.addProperty("run_in_single_player", runInSinglePlayer);
 
         JsonArray messagesArray = new JsonArray();
         for (String message : messages) {
@@ -50,9 +56,10 @@ public class MotdConfig implements JsonSerializable {
 
     @Override
     public void load(JsonObject json) {
-        JSONHelper.checkRequiredFields(json, "enabled", "messages");
+        JSONHelper.checkRequiredFields(json, "enabled", "run_in_single_player", "messages");
 
         enabled = json.get("enabled").getAsBoolean();
+        runInSinglePlayer = json.get("run_in_single_player").getAsBoolean();
 
         JsonArray messagesArray = json.getAsJsonArray("messages");
         messages = JSONHelper.jsonArrayToList(messagesArray);

@@ -9,6 +9,7 @@ import com.maciej916.server_master.util.MessageHelper;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -27,6 +28,9 @@ public class PlayerLoggedInEventHandler {
         }
 
         if (player instanceof ServerPlayer serverPlayer) {
+            MinecraftServer server = serverPlayer.getServer();
+            if (server == null) return;
+
             if (ModConfigs.WELCOME_MESSAGE_CONFIG.isEnabled()) {
                 serverPlayer.connection.send(new ClientboundSetTitleTextPacket(MessageHelper.formatMessage(serverPlayer, ModConfigs.WELCOME_MESSAGE_CONFIG.getMessage())));
                 serverPlayer.connection.send(new ClientboundSetTitlesAnimationPacket(
@@ -41,8 +45,10 @@ public class PlayerLoggedInEventHandler {
             }
 
             if (ModConfigs.MOTD_CONFIG.isEnabled()) {
-                for (MutableComponent message : ModConfigs.MOTD_CONFIG.getMessages()) {
-                    serverPlayer.displayClientMessage(MessageHelper.formatMessage(serverPlayer, message), false);
+                if (server.isDedicatedServer() || ModConfigs.MOTD_CONFIG.isRunInSinglePlayer()) {
+                    for (MutableComponent message : ModConfigs.MOTD_CONFIG.getMessages()) {
+                        serverPlayer.displayClientMessage(MessageHelper.formatMessage(serverPlayer, message), false);
+                    }
                 }
             }
         }

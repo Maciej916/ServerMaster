@@ -5,7 +5,8 @@ public enum ModConfigType {
     WELCOME_MESSAGE,
     MOTD,
     CUSTOM_VARIABLES,
-    RULES
+    RULES,
+    JOIN_LEAVE_MESSAGES
     ;
 
     public String getConfigFileName() {

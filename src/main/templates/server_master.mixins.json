@@ -4,7 +4,8 @@
   "package": "com.maciej916.server_master.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-
+    "PlayerListMixin",
+    "ServerGamePacketListenerImplMixin"
   ],
   "injectors": {
     "defaultRequire": 1
