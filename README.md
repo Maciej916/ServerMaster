@@ -8,8 +8,10 @@ Your complete server management solution! From homes and warps, to auto-messager
 
 ## Links and Downloads
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/server-master) (downloads and more information)
+- [Modrinth](https://modrinth.com/mod/server-master) (downloads and more information)
 - [GitHub repository](https://github.com/Maciej916/ServerMaster) (source code)
 - [Issue Tracker on GitHub](https://github.com/Maciej916/ServerMaster/issues) (bug reports and feature requests)
-
+- [GitHub Wiki](https://github.com/Maciej916/ServerMaster/wiki) (knowledge base, configuration)
+  
 ## Installation
 Put mod in **/mods** directory for both **client and server** side in order to mod work property.
